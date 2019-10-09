@@ -32,5 +32,11 @@ print(is_shifted('abcde', 'cdeab'))
 # True
 
 print(is_shifted('ikaekaj', 'kajikae'))
+# True
 
 print(is_shifted('kajikei', 'jkkaie'))
+# False
+
+
+#Improvements:
+#Check len(a) == 0
