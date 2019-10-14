@@ -128,14 +128,14 @@ def rearrangeString(s: str) -> str or None:
         node = TwoValueNode(char, count)
         heap.insert(node)
     
-    temp_index = 0
-    while temp_index < len(heap.cbt):
-        if heap.cbt[temp_index] is None:
-            temp_index += 1
-            continue
-        print(heap.cbt[temp_index].letter + " : " + str(heap.cbt[temp_index].get_size()))
+    # temp_index = 0
+    # while temp_index < len(heap.cbt):
+    #     if heap.cbt[temp_index] is None:
+    #         temp_index += 1
+    #         continue
+    #     print(heap.cbt[temp_index].letter + " : " + str(heap.cbt[temp_index].get_size()))
         
-        temp_index += 1
+    #     temp_index += 1
 
 
     # check possible or not
@@ -186,28 +186,32 @@ def rearrangeString(s: str) -> str or None:
         # print(heap.cbt[1].letter + ": "+ str(heap.cbt[1].size))
         # print(heap.cbt[2].letter + ": "+ str(heap.cbt[2].size))
 
-    print("before finish")
-    print(heap.cbt[0].letter + ": "+ str(heap.cbt[0].size))
-    print(heap.cbt[1].letter + ": "+ str(heap.cbt[1].size))
-    print(heap.cbt[2].letter + ": "+ str(heap.cbt[2].size))
-    temp_index = 0
-    while temp_index < len(heap.cbt):
-        if heap.cbt[temp_index] is None:
-            temp_index += 1
-            continue
-        print(heap.cbt[temp_index].letter + " : " + str(heap.cbt[temp_index].size))
+    # print("before finish")
+    # print(heap.cbt[0].letter + ": "+ str(heap.cbt[0].size))
+    # print(heap.cbt[1].letter + ": "+ str(heap.cbt[1].size))
+    # print(heap.cbt[2].letter + ": "+ str(heap.cbt[2].size))
+    # temp_index = 0
+    # while temp_index < len(heap.cbt):
+    #     if heap.cbt[temp_index] is None:
+    #         temp_index += 1
+    #         continue
+    #     print(heap.cbt[temp_index].letter + " : " + str(heap.cbt[temp_index].size))
         
-        temp_index += 1
+    #     temp_index += 1
 
 
     return string
     
 
-print(rearrangeString('gahoeaddddggrea'))
-# cbcabc
+print(rearrangeString("gahoeaddddggrea"))
+# no order required
+# ahgogrgededadad
 
-# gahoeaddddggrea
-# ddddgggaaaeehor
+print(rearrangeString("cccciiiiiddddssskkdddcc"))
+# no order required
+# ckckcscscsdidididididcd
 
 
-print(rearrangeString('cccciiiiiddddssskkdddcc'))
+# improvement
+# this is too complicated comarared to answer.py.
+# use only slice operation, not priority queue.

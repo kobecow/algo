@@ -14,8 +14,6 @@ def rearrangeString(s: str) -> str or None:
     return "".join(ans)
 
 
-print(rearrangeString("ssssbbcccc"))
-
 print(rearrangeString("gahoeaddddggrea"))
 # no order required
 # ahgogrgededadad
@@ -23,3 +21,4 @@ print(rearrangeString("gahoeaddddggrea"))
 print(rearrangeString("cccciiiiiddddssskkdddcc"))
 # no order required
 # ckckcscscsdidididididcd
+
