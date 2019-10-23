@@ -50,3 +50,4 @@ print(checkAnagram('abcbcaabcabac', 'ca'))
 # print("abcbcaabcabac"[4:6])
 # print("abcbcaabcabac"[8:10])
 # print("abcbcaabcabac"[11:13])
+
