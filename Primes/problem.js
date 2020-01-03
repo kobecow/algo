@@ -15,7 +15,7 @@
 /**
  * 
  * @param {intger} n
- * @returns {Array} ans
+ * @returns {Array} 
  * 
  */
 
@@ -27,7 +27,6 @@ const find_primes = n => {
     const set_Primes = new Set([2]);
 
     const is_Prime = (element_Prime, value2, set) => {
-        console.log(i)
         trueOrFalse.push(i % element_Prime === 0);
     }
 
@@ -44,8 +43,18 @@ const find_primes = n => {
 
 
     }
-    return Array(set_Primes)
+    return Array.from(set_Primes);
 
 }
+// const startTime_Set = performance.now();
+console.time("set");
+let times_Set = 0;
+while (times_Set < 100) {
+    find_primes(100);
+    times_Set++
+    console.log(times_Set);
+}
+console.timeEnd("set");
+// const endTime_Set = performance.now();
 
-console.log(find_primes(20));
+// console.log(endTime_Set - startTime_Set);
