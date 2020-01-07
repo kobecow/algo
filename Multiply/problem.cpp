@@ -6,10 +6,11 @@ You should assume that the numbers may be sufficiently large such that the built
 */
 
 /**
- * @param {integer} input1
+ * @param {integer} input1 
  * @param {integer} input2
  * @return {string} ans (input1 * input2)
  * 
+ * info : integer must be less than equal 2,147,483,647
  * 1. define max_handable
  * 2. separate over max_handable and less than handable
  * 3. ???
