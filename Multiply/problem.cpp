@@ -30,13 +30,13 @@ int main()
     both x and b is huge number
     either x or b is huge one
     neither one is huge
-    */
-    int x = 77318734; // 0 < x <=2147483647
-    int y = 57138764; // 0 < x <=2147483647
+    */      
+    int x = 177318734; // 0 < x <=2147483647
+    int y = 157138764; // 0 < x <=2147483647
     // max_handable = 10000 < 46340
     int max_handable = 10000;
     int x_gt = x / max_handable;
-    cout << x_gt << endl;
+    //cout << x_gt << endl;
 
     int x_lt = x - (x_gt * max_handable);
     //cout << x_lt << endl;
@@ -69,12 +69,12 @@ int main()
 
     int big_sum = big_xy + mid_gt;
 
-    cout << big_sum;
-    cout << mid_lt;
-    cout << small_lt<<endl;
+    // cout << big_sum;
+    // cout << mid_lt;
+    // cout << small_lt<<endl;
+    string ans =to_string(big_sum) + to_string(mid_lt) + to_string(small_lt);
 
-
-
+    cout << ans;
 
 
 
