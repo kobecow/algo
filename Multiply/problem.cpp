@@ -17,3 +17,20 @@ You should assume that the numbers may be sufficiently large such that the built
  * 
  * 
 */
+
+#include <string>
+
+using namespace std;
+
+int main()
+{
+    /*
+    three test
+    both x and b is huge number
+    either x or b is huge one
+    neither one is huge
+    */
+    float x = 333;      // 0 < x <=2147483647
+    float y = 57138764; // 0 < x <=2147483647
+    return 0;
+}
