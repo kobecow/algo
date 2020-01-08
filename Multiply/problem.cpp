@@ -19,6 +19,7 @@ You should assume that the numbers may be sufficiently large such that the built
 */
 
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -30,7 +31,52 @@ int main()
     either x or b is huge one
     neither one is huge
     */
-    float x = 333;      // 0 < x <=2147483647
-    float y = 57138764; // 0 < x <=2147483647
+    int x = 77318734; // 0 < x <=2147483647
+    int y = 57138764; // 0 < x <=2147483647
+    // max_handable = 10000 < 46340
+    int max_handable = 10000;
+    int x_gt = x / max_handable;
+    cout << x_gt << endl;
+
+    int x_lt = x - (x_gt * max_handable);
+    //cout << x_lt << endl;
+
+
+    int y_gt = y / max_handable;
+    //cout << y_gt << endl;
+
+    int y_lt = y - (y_gt * max_handable);
+    //cout << y_lt << endl;
+
+    // left
+    int big_xy = x_gt * y_gt;
+
+
+    // middle
+    int mid_xy = (x_gt* y_lt) + (x_lt * y_gt);
+
+    // right
+    int small_xy = x_lt * y_lt;
+
+
+    // string-like calculation
+    int small_gt = small_xy / max_handable;
+    int small_lt = small_xy - (small_gt * max_handable);
+
+    int mid_sum = mid_xy + small_gt;
+    int mid_gt = mid_sum / max_handable;
+    int mid_lt = mid_sum - (mid_gt * max_handable);
+
+    int big_sum = big_xy + mid_gt;
+
+    cout << big_sum;
+    cout << mid_lt;
+    cout << small_lt<<endl;
+
+
+
+
+
+
     return 0;
 }
