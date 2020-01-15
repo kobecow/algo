@@ -21,8 +21,26 @@ public:
         if (l1 == 0 || l2 == 0)
             return "0";
 
-        vector<int> v(l1 + l2, 0);
-        vector<int> vv;
-        vector<int> con(11);
+        vector<int> vec(l1 + l2, 0);
+
+        for (unsigned int i = 0; i < l1; i++)
+        {
+            int carry = 0;
+            int n1 = (int)(num1[l1 - i - 1] - '0');
+            cout << "This is n1 : " << n1 << endl;
+            for (unsigned int j = 0; j < l2; j++)
+            {
+                int n2 = (int)(num2[l2 - j - 1] - '0');
+                cout << "This is n2: " << n2 << endl;
+            }
+        }
+        return "aaa";
     }
 };
+
+int main()
+{
+    Solution sol;
+    sol.multiply("13312312", "74167478215");
+    return 0;
+}
