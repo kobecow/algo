@@ -37,22 +37,39 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 exports.__esModule = true;
 var fs = require("fs");
+var readline = require("readline");
 var fsPromises = fs.promises;
-function readfile(filepath) {
+var Answer = /** @class */ (function () {
+    function Answer() {
+    }
+    Answer.prototype.getAnswer = function () {
+        return this.num_Type + '\n' + this.pizzas.join(',');
+    };
+    return Answer;
+}());
+function solution(filepath) {
     return __awaiter(this, void 0, void 0, function () {
+        var readFileConfig, readInterface, linecount, typeNumPizzas, targetNum;
         return __generator(this, function (_a) {
-            try {
-                return [2 /*return*/, fsPromises.readFile(filepath)];
-            }
-            catch (err) {
-                console.error('Error occured while reading directory!', err);
-            }
-            return [2 /*return*/];
+            readFileConfig = {
+                input: fs.createReadStream(filepath),
+                console: false
+            };
+            readInterface = readline.createInterface(readFileConfig);
+            linecount = 0;
+            readInterface.on("line", function (data) {
+                if (linecount === 0) {
+                    var arr = data.split(' ');
+                    typeNumPizzas = parseInt(arr[1]);
+                    targetNum = parseInt(arr[0]);
+                    console.log(typeNumPizzas);
+                    console.log(targetNum);
+                }
+                console.log(linecount);
+                linecount += 1;
+            });
+            return [2 /*return*/, "ABC"];
         });
     });
 }
-readfile("./input_files/a_example.in").then(function (data) {
-    console.log(data);
-}, function (err) {
-    console.log(err);
-});
+solution("./PizzaOrder/input_files/a_example.in");
