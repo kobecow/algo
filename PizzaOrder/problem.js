@@ -49,11 +49,17 @@ var Answer = /** @class */ (function () {
 }());
 function solution(filepath) {
     return __awaiter(this, void 0, void 0, function () {
-        var readFileConfig, readInterface, linecount, typeNumPizzas, targetNum;
+        var readFileConfig, main, readInterface, linecount, typeNumPizzas, targetNum, pizzaArr;
         return __generator(this, function (_a) {
             readFileConfig = {
                 input: fs.createReadStream(filepath),
                 console: false
+            };
+            main = function (arr, target) {
+                var currentMax = 0;
+                var wholeMmax = 0;
+                var binarySearch = function (arr, target) {
+                };
             };
             readInterface = readline.createInterface(readFileConfig);
             linecount = 0;
@@ -65,11 +71,16 @@ function solution(filepath) {
                     console.log(typeNumPizzas);
                     console.log(targetNum);
                 }
+                if (linecount === 1) {
+                    pizzaArr = data.split(' ').map(function (x) { return parseInt(x); });
+                    console.log(pizzaArr);
+                    return main(pizzaArr, targetNum);
+                }
                 console.log(linecount);
                 linecount += 1;
             });
-            return [2 /*return*/, "ABC"];
+            return [2 /*return*/, "ABCD"];
         });
     });
 }
-solution("./PizzaOrder/input_files/a_example.in");
+solution("./input_files/a_example.in");

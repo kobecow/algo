@@ -19,11 +19,26 @@ async function solution(filepath: string) {
         input: fs.createReadStream(filepath),
         console: false
     }
+    /**
+     * @param Array <number> arr // sorted ie. [1,3,7,12,20]
+     * @param number target
+     * @returns number typeNum
+     * @returns Array <number> pizzas // sorted ie [1,2,3,6]
+     */
+    const main = (arr, target) => {
+        let currentMax :number = 0;
+        let wholeMmax : number = 0;
+
+        const binarySearch = (arr, target) =>{
+            
+        }
+    }
 
     const readInterface = readline.createInterface(readFileConfig);
     let linecount: number = 0;
     let typeNumPizzas: number;
     let targetNum: number;
+    let pizzaArr: Array<number>;
 
     readInterface.on("line", function (data) {
 
@@ -37,14 +52,20 @@ async function solution(filepath: string) {
             console.log(targetNum);
         }
 
+        if(linecount === 1){
+            pizzaArr = data.split(' ').map(x => parseInt(x));
+            console.log(pizzaArr);
+            return main(pizzaArr, targetNum);
+        }
+
 
 
         console.log(linecount);
         linecount += 1;
     })
 
-    return "ABC";
+    return "ABCD";
 
 
 }
-solution("./PizzaOrder/input_files/a_example.in")
+solution("./input_files/a_example.in")
