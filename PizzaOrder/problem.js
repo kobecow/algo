@@ -56,10 +56,49 @@ function solution(filepath) {
                 console: false
             };
             main = function (arr, target) {
+                /**
+                 * pick one biggest number under target in array
+                 * by BinarySearch
+                 *
+                 * @param arr of numbers
+                 * @param target number
+                 * @returns bigNum
+                 */
+                var binarySearch = function (arr, target) {
+                    var re_binarySearch = function (arr, target, s_index, e_index) {
+                        return 1;
+                    };
+                    return re_binarySearch(arr, target, 0, arr.length - 1);
+                };
+                /**
+                 * pick one biggest number under target in array
+                 *
+                 * @param arr of numbers
+                 * @param target number
+                 * @returns bigNum
+                 */
+                var pickBigNum = function (arr, target) {
+                    if (arr[arr.length - 1] <= target)
+                        return arr.length - 1;
+                    var bigNum = binarySearch(arr, target);
+                    return bigNum;
+                };
                 var currentMax = 0;
                 var wholeMmax = 0;
-                var binarySearch = function (arr, target) {
-                };
+                var currentNum = arr[arr.length - 1];
+                var tmpTarget = pickBigNum(arr, target);
+                if (tmpTarget > currentNum * 2) {
+                    var result = main(arr.slice(0, arr.length - 1), tmpTarget);
+                    if (result) {
+                        return "Something";
+                    }
+                    else {
+                        return "otherthing";
+                    }
+                }
+                else {
+                    // binarySearch
+                }
             };
             readInterface = readline.createInterface(readFileConfig);
             linecount = 0;
